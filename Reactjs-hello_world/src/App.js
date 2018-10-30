@@ -29,7 +29,12 @@ class App extends Component {
         return window.open('https://github.com/track7dev');
       case 'PORTFOLIO':
         return window.open('http://BrandonFizer.com');
-      
+      case 'STUDENT' :
+        return window.open('https://github.com/jcovington16');
+      case 'TERROR' :
+        const song = new Audio('music/Terror.mp3');
+        song.play();
+        return setTimeout(() => {song.pause(); clearTimeout();},6000);
       default:
       return;
     }
@@ -38,12 +43,14 @@ class App extends Component {
   render() {
     return (
       <main className="App" onKeyUp={(e) => this.ent_check(e)}>
-  
+          {/* audio */}
+           
         {
           //OVERVIEWS
           //this.state.anim && 
             <section id="App-Overviews" className="App-Overviews">
               {
+          
                 this.state.anim ?
                   this.state.anim.name === "_MATRIX_" ?
                     this.state.anim.data.init() //call matrix anim
